@@ -173,7 +173,7 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-princess-girl.png'
     ]); // Want to use more images? Add them to this list.
     Resources.onReady(init); // Places init function into array
 
