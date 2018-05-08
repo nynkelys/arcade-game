@@ -48,8 +48,35 @@ Player.prototype.render = function() { // Draw player on screen
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.handleInput = function(e) {
-    this.ctlKey = e;
+Player.prototype.handleInput = function(keyCode) {
+    if (keyCode == 'left') {
+        if (this.x - 101 < 0) {
+            this.x = 0;
+        } else {
+            this.x -= 101;
+        }
+    };
+    if (keyCode == 'right') {
+        if (this.x + 101 > 404) {
+            this.x = 404;
+        } else {
+            this.x += 101;
+        }
+    };
+    if (keyCode == 'down') {
+        if (this.y + 85 > 404) {
+            this.y = 404;
+        } else {
+            this.y += 83;
+        }
+    };
+    if (keyCode == 'up') {
+        if (this.y - 85 < 0) {
+            // resetPlayer();
+        } else {
+            this.y -= 83;
+        }
+    };
 };
 
 // function checkCollision() {
@@ -62,7 +89,7 @@ Player.prototype.handleInput = function(e) {
 // };
 
 // Now instantiate your objects.
-const player = new Player(202, 400, 50); // 505 / 2 - 50.5 = 202
+const player = new Player(202, 404, 50); // 505 / 2 - 50.5 = 202
 const enemyOne = new Enemy(-100, 227.5, 50);
 const enemyTwo = new Enemy(-100, 227.5, 50);
 const enemyThree = new Enemy(-100, 145, 50);
