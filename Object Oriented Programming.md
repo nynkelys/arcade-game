@@ -146,12 +146,13 @@ To instantiate a new object from here:
 If we would then invoke `myself.name`, it would yield Nynke.
 
 __So:__
-1. Define
+Define:
 
 
     new FuncName();
 
-2. Add properties
+
+Add properties:
 
 
     function FuncName(arg1, arg2) {
@@ -163,10 +164,12 @@ __So:__
         };
     };
 
-3. Assign to variable to instantiate new object __or__ start with 2. and then add
+
+Assign to variable to instantiate new object __or__ start with 2. and then add:
 
 
     const objName = new FuncName(arg1, arg2);
+
 
 To check if objName was created with FuncName: `objName instanceof FuncName`.
 
