@@ -16,9 +16,9 @@ Enemy.prototype.update = function(dt) {
         this.x += this.speed * dt;
     } else {
         this.x = -100; // Enemy off canvas? Back to left of canvas
-    }
+    };
 
-    // checkCollision();
+    checkCollision(this);
 };
 
 // Draw the enemy on the screen, required method for game
@@ -79,9 +79,14 @@ Player.prototype.handleInput = function(keyCode) {
     };
 };
 
-// function checkCollision() {
-
-// };
+function checkCollision(oneEnemy) { // if 'this' collides with player
+    if (player.x < oneEnemy.x + 50 &&
+    player.x + 50 > oneEnemy.x &&
+    player.y < oneEnemy.y + 20 &&
+    20 + player.y > oneEnemy.y) {
+        alert('Hit!')
+    }
+};
 
 // function resetPlayer() {
     // scoreboard = 0;
@@ -93,7 +98,7 @@ Player.prototype.handleInput = function(keyCode) {
 // };
 
 // Now instantiate your objects.
-const player = new Player(202, 404); // 505 / 2 - 50.5 = 202
+const player = new Player(202, 404); // 505 / 2 - 50.5 = 202 (0, 0 is top left corner)
 const enemyOne = new Enemy(-100, 227.5, 50);
 const enemyTwo = new Enemy(-100, 227.5, 50);
 const enemyThree = new Enemy(-100, 145, 50);
