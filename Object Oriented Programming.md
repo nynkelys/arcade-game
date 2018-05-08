@@ -1,4 +1,4 @@
-# Object-oriented programming in JavaScript
+﻿# Object-oriented programming in JavaScript
 
 ### What is an object and how do I create it?
 - __Array__ `[ ]`: ordered collection of elements, referenced by indexes
@@ -111,8 +111,7 @@ Classes are categories of objects.
 - __Class__: blueprint for an object
 
 ##### Constructor functions
-1. Start with a capital letter
-2. Must be called with `new`
+Start with a capital letter; Must be called with `new`; Has object created automatically
 
 
     new SoftwareDev() {
@@ -120,13 +119,14 @@ Classes are categories of objects.
     }; // no return statement!
 
 
-3. Has object created automatically
-
 From here, you can create a new object (_an instance_) - as many as you like.
+
 
     let developer = new SoftwareDeveloper();
 
+
 __Constructor functions accept arguments!__ We could update the previous as follows:
+
 
     function SoftwareDeveloper (name) {
         this.favLang = 'JS';
@@ -136,9 +136,12 @@ __Constructor functions accept arguments!__ We could update the previous as foll
         }
     };
 
+
 To instantiate a new object from here:
 
+
     let myself = new SoftwareDeveloper('Nynke');
+
 
 If we would then invoke `myself.name`, it would yield Nynke.
 

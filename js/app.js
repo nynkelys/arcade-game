@@ -15,8 +15,10 @@ Enemy.prototype.update = function(dt) {
     if (this.x <= 505) { // Enemies only move horizontally, hence only x-value changes
         this.x += this.speed * dt;
     } else {
-        this.x = -100;
+        this.x = -100; // Enemy off canvas? Back to left of canvas
     }
+
+    // checkCollision();
 };
 
 // Draw the enemy on the screen, required method for game
@@ -39,7 +41,7 @@ Player.prototype.update = function() { // Add: keyboard events
 // i.e. if this.y > nnn;
 // this.y = nnn;
 // do this for left, right and bottom
-// Add: top, if player reaches water, reset game
+// Add: top, if player reaches water, resetPlayer();
 };
 
 Player.prototype.render = function() { // Draw player on screen
@@ -50,18 +52,25 @@ Player.prototype.handleInput = function(e) {
     this.ctlKey = e;
 };
 
+// function checkCollision() {
+
+// resetPlayer();
+// };
+
+// function resetPlayer() {
+
+// };
 
 // Now instantiate your objects.
-const player = new Player(202.5, 400, 50);
+const player = new Player(202, 400, 50); // 505 / 2 - 50.5 = 202
 const enemyOne = new Enemy(-100, 227.5, 50);
 const enemyTwo = new Enemy(-100, 227.5, 50);
 const enemyThree = new Enemy(-100, 145, 50);
-const enemyFour = new Enemy(-100, 60, 50);
-const enemyFive = new Enemy(-100, 60, 50);
+const enemyFour = new Enemy(-100, 61, 50);
+const enemyFive = new Enemy(-100, 61, 50);
 
 let allEnemies = [];
 allEnemies.push(enemyOne, enemyTwo, enemyThree, enemyFour, enemyFive);
-
 
 
 // This listens for key presses and sends the keys to your
