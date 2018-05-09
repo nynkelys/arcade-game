@@ -80,11 +80,12 @@ Player.prototype.handleInput = function(keyCode) {
 };
 
 function checkCollision(oneEnemy) { // if 'this' collides with player
-    if (player.x < oneEnemy.x + 50 &&
-    player.x + 50 > oneEnemy.x &&
-    player.y < oneEnemy.y + 20 &&
-    20 + player.y > oneEnemy.y) {
-        alert('Hit!')
+    if (player.x < oneEnemy.x + 80 &&
+    player.x + 60 > oneEnemy.x &&
+    player.y < oneEnemy.y + 80 &&
+    40 + player.y > oneEnemy.y) {
+        player.x = 202;
+        player.y = 404;
     }
 };
 
