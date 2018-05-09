@@ -72,8 +72,7 @@ Player.prototype.handleInput = function(keyCode) {
     if (keyCode == 'up') {
         if (this.y - 85 < 0) {
             resetPlayer();
-            // resetPlayer();
-            // updateScoreBoard();
+            counter = counter + 1;
         } else {
             this.y -= 83;
         }
@@ -86,7 +85,6 @@ function checkCollision(oneEnemy) { // if 'this' collides with player
     player.y < oneEnemy.y + 80 &&
     40 + player.y > oneEnemy.y) {
         resetPlayer();
-        // scoreboard back to zero
     }
 };
 
@@ -95,9 +93,12 @@ function resetPlayer() {
     player.y = 404;
 };
 
-// function updateScoreBoard() {
-    // scoreboard +1 or whatever
-// };
+let scoreBoard = document.getElementById('scoreboard');
+let counter = 0;
+
+function setScore() {
+    scoreBoard.innerText = counter;
+};
 
 // Now instantiate your objects.
 const player = new Player(202, 404); // 505 / 2 - 50.5 = 202 (0, 0 is top left corner)
