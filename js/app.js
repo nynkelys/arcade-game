@@ -71,6 +71,7 @@ Player.prototype.handleInput = function(keyCode) {
     };
     if (keyCode == 'up') {
         if (this.y - 85 < 0) {
+            resetPlayer();
             // resetPlayer();
             // updateScoreBoard();
         } else {
@@ -84,15 +85,15 @@ function checkCollision(oneEnemy) { // if 'this' collides with player
     player.x + 60 > oneEnemy.x &&
     player.y < oneEnemy.y + 80 &&
     40 + player.y > oneEnemy.y) {
-        player.x = 202;
-        player.y = 404;
+        resetPlayer();
+        // scoreboard back to zero
     }
 };
 
-// function resetPlayer() {
-    // scoreboard = 0;
-    // player position back to x = 202 and y = 404
-// };
+function resetPlayer() {
+    player.x = 202;
+    player.y = 404;
+};
 
 // function updateScoreBoard() {
     // scoreboard +1 or whatever
